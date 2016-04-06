@@ -1,12 +1,12 @@
 Gem::Specification.new do |s|
-  s.name = 'logstash-filter-example'
-  s.version         = '2.0.3'
+  s.name = 'logstash-filter-httphash'
+  s.version = '0.1.0'
   s.licenses = ['Apache License (2.0)']
-  s.summary = "This example filter replaces the contents of the message field with the specified value."
-  s.description = "This gem is a logstash plugin required to be installed on top of the Logstash core pipeline using $LS_HOME/bin/plugin install gemname. This gem is not a stand-alone program"
-  s.authors = ["Elastic"]
-  s.email = 'info@elastic.co'
-  s.homepage = "http://www.elastic.co/guide/en/logstash/current/index.html"
+  s.summary = "This filter does a hash over a file accesible via HTTP"
+  s.description = "This filter does a hash over a file accesible via HTTP"
+  s.authors = ["dominofire"]
+  s.email = 'fer.aguilar.reyes@gmail.com'
+  s.homepage = "http://github.com/dominofire/logstash-filter-httphash"
   s.require_paths = ["lib"]
 
   # Files
@@ -18,6 +18,8 @@ Gem::Specification.new do |s|
   s.metadata = { "logstash_plugin" => "true", "logstash_group" => "filter" }
 
   # Gem dependencies
-  s.add_runtime_dependency "logstash-core", ">= 2.0.0", "< 3.0.0"
+  #s.add_runtime_dependency 'logstash-core', '>= 1.4.0', '< 2.0.0'
+  s.add_runtime_dependency "logstash-core-plugin-api", "~> 1.0"
+
   s.add_development_dependency 'logstash-devutils'
 end
