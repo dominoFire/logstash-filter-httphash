@@ -3,7 +3,7 @@ require 'net/http'
 require 'openssl'
 
 class UrlResolver
-  def self.resolve(uri_str, agent = 'curl/7.43.0', max_attempts = 10, timeout = 10)
+  def self.resolve(uri_str, agent = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.110 Safari/537.36', max_attempts = 10, timeout = 10)
     attempts = 0
     cookie = nil
 

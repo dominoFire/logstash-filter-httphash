@@ -31,7 +31,12 @@ class LogStash::Filters::HTTPhash < LogStash::Filters::Base
 
   public
   def filter(event)
-    event[@output_var] = Hasher.do_hash(UrlResolver.resolve(@input_url), "sha256").force_encoding(Encoding::UTF_8)
+    begin
+      hash_str = Hasher.do_hash(UrlResolver.resolve(event[@input_url]), "sha256").force_encoding(Encoding::UTF_8)
+    rescue
+      hash_str = nil
+    end
+    event[@output_var] = hash_str
     # filter_matched should go in the last line of our successful code
     filter_matched(event)
   end # def filter
