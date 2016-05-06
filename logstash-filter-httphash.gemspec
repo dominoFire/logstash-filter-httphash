@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name = 'logstash-filter-httphash'
-  s.version = '0.1.0'
+  s.version = '0.2.0'
   s.licenses = ['Apache License (2.0)']
   s.summary = "This filter does a hash over a file accesible via HTTP"
   s.description = "This filter does a hash over a file accesible via HTTP"
